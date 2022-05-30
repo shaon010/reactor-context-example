@@ -17,6 +17,7 @@ public class ContextExampleController {
         Map<String, Object> dataMap = new ConcurrentHashMap<>();
         return Mono.just(true)
                 .doOnEach((Signal signal) -> {
+                    //doOnEach is available for Mono chain
                     if (signal.isOnNext()) {
                         ContextView context = signal.getContextView();
                         //do whatever you want to do with context.
